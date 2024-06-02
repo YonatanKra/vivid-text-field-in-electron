@@ -1,3 +1,7 @@
 /* styles.css */
 
 /* Add styles here to customize the appearance of your app */
+
+@import "https://unpkg.com/@vonage/vivid@latest/styles/tokens/theme-light.css";
+@import "https://unpkg.com/@vonage/vivid@latest/styles/core/all.css";
+@import "https://unpkg.com/@vonage/vivid@latest/styles/fonts/spezia-variable.css";

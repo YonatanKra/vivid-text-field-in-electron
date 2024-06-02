@@ -3,17 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <meta http-equiv="Content-Security-Policy" 
+      content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; style-src 'self' 'unsafe-inline' https://*;">
     <link href="./styles.css" rel="stylesheet">
     <title>Hello World!</title>
   </head>
-  <body>
+  <body class="vvd-root">
     <h1>Hello World!</h1>
     We are using Node.js <span id="node-version"></span>,
     Chromium <span id="chrome-version"></span>,
     and Electron <span id="electron-version"></span>.
-
+    <vwc-text-field
+      icon="search"
+      placeholder="search"
+      label="search"
+      appearance="fieldset"
+      class="text-field"
+    >
+      <vwc-button
+        onclick="document.querySelector('vwc-text-field').value = ''"
+        slot="action-items"
+        size="condensed"
+        icon="close-line"
+        aria-label="clear field"
+        appearance="ghost"
+      ></vwc-button>
+    </vwc-text-field>
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
+    <script type="module" src='https://unpkg.com/@vonage/vivid@latest/text-field'></script>
+    <script type="module" src='https://unpkg.com/@vonage/vivid@latest/button'></script>
   </body>
 </html>
